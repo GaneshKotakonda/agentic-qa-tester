@@ -1,0 +1,45 @@
+
+{
+  "name": "Valid login",
+  "steps": [
+    {
+      "action": "goto",
+      "path": "/login"
+    },
+    {
+      "action": "fill",
+      "target": {
+        "by": "test_id",
+        "value": "email-input"
+      },
+      "value": "qa@example.test"
+    },
+    {
+      "action": "fill",
+      "target": {
+        "by": "test_id",
+        "value": "password-input"
+      },
+      "value": "demo-password"
+    },
+    {
+      "action": "click",
+      "target": {
+        "by": "role",
+        "value": "button",
+        "name": "Login"
+      }
+    },
+    {
+      "action": "wait_for_url",
+      "path": "/dashboard"
+    },
+    {
+      "action": "assert_visible",
+      "target": {
+        "by": "test_id",
+        "value": "dashboard-title"
+      }
+    }
+  ]
+}

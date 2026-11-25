@@ -1,0 +1,45 @@
+
+{
+  "name": "Invalid login",
+  "steps": [
+    {
+      "action": "goto",
+      "path": "/login"
+    },
+    {
+      "action": "fill",
+      "target": {
+        "by": "test_id",
+        "value": "email-input"
+      },
+      "value": "qa@example.test"
+    },
+    {
+      "action": "fill",
+      "target": {
+        "by": "test_id",
+        "value": "password-input"
+      },
+      "value": "wrong-password"
+    },
+    {
+      "action": "click",
+      "target": {
+        "by": "role",
+        "value": "button",
+        "name": "Login"
+      }
+    },
+    {
+      "action": "assert_text",
+      "target": {
+        "by": "test_id",
+        "value": "login-error"
+      },
+      "assertion": {
+        "expected": "Invalid email or password",
+        "mode": "exact"
+      }
+    }
+  ]
+}
